@@ -88,7 +88,7 @@ static void _cd_crypt_delete_stash_item (GtkMenuItem *menu_item, gpointer data)
 //\___________ Define here the entries you want to add to the menu when the user right-clicks on your icon or on its subdock or your desklet. The icon and the container that were clicked are available through the macros CD_APPLET_CLICKED_ICON and CD_APPLET_CLICKED_CONTAINER. CD_APPLET_CLICKED_ICON may be NULL if the user clicked in the container but out of icons. The menu where you can add your entries is available throught the macro CD_APPLET_MY_MENU; you can add sub-menu to it if you want.
 CD_APPLET_ON_BUILD_MENU_BEGIN
 
-    GtkWidget *pSubMenu = CD_APPLET_ADD_SUB_MENU_WITH_IMAGE (D_("Delete stash ..."), CD_APPLET_MY_MENU, GTK_STOCK_REFRESH);
+    GtkWidget *pSubMenu = CD_APPLET_ADD_SUB_MENU_WITH_IMAGE (D_("Delete stash ..."), CD_APPLET_MY_MENU, GTK_STOCK_DELETE);
     for (int i=0; i < myData.pStashArray->len; i++) {
         CryptItem *pStashItem = NULL;
         pStashItem = g_ptr_array_index (myData.pStashArray, i);
@@ -101,7 +101,7 @@ CD_APPLET_ON_BUILD_MENU_BEGIN
         }
     }
 
-CD_APPLET_ADD_IN_MENU_WITH_STOCK (D_("Import stash"), GTK_STOCK_CLEAR, _cd_crypt_import_stash, CD_APPLET_MY_MENU);
-CD_APPLET_ADD_IN_MENU_WITH_STOCK (D_("Create new stash"), GTK_STOCK_PASTE, _cd_crypt_create_new_stash, CD_APPLET_MY_MENU);
+CD_APPLET_ADD_IN_MENU_WITH_STOCK (D_("Import stash"), GTK_STOCK_INDEX, _cd_crypt_import_stash, CD_APPLET_MY_MENU);
+CD_APPLET_ADD_IN_MENU_WITH_STOCK (D_("Create new stash"), GTK_STOCK_NEW, _cd_crypt_create_new_stash, CD_APPLET_MY_MENU);
 
 CD_APPLET_ON_BUILD_MENU_END
