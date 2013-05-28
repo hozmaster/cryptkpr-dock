@@ -37,7 +37,7 @@ CD_APPLET_DEFINITION (N_("cryptkpr-dock"),
 CD_APPLET_INIT_BEGIN
 	if (myDesklet)
 	{
-		CD_APPLET_SET_DESKLET_RENDERER ("Simple");  // set a desklet renderer.
+        CD_APPLET_SET_DESKLET_RENDERER ("Simple");  // set a desklet renderer
 	}
 	
 	CD_APPLET_SET_DEFAULT_IMAGE_ON_MY_ICON_IF_NONE;  // set the default icon if none is specified in conf.
@@ -73,10 +73,11 @@ CD_APPLET_RELOAD_BEGIN
 	{
 		CD_APPLET_SET_DESKLET_RENDERER ("Simple");
 	}
-	
+     // In desklet mode we should show also application icon.
+    CD_APPLET_SET_IMAGE_ON_MY_ICON (MY_APPLET_SHARE_DATA_DIR"/"MY_APPLET_ICON_FILE);
     if (CD_APPLET_MY_CONFIG_CHANGED)
-    {
+        {
 		cairo_dock_dialog_unreference (myData.pDialog);
         myData.pDialog = NULL;
-	}
+        }
 CD_APPLET_RELOAD_END
