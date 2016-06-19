@@ -1,3 +1,5 @@
+cmake_policy(SET CMP0003 NEW)
+
 add_subdirectory(src)
 add_subdirectory(data)
 
